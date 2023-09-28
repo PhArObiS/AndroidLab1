@@ -14,9 +14,10 @@ namespace Lab1Neil.Pages
         {
         }
 
-        public void OnPost(string StudentNumber, string Email, string Password, string Image, string FullName )
+        public IActionResult OnPost(string StudentNumber, string Email, string Password, string Image, string FullName )
         {
             dataSource.myList.Add(new Student(StudentNumber, FullName, Email, Password, Image));
+            return RedirectToPage("Index");
         }
     }
 }

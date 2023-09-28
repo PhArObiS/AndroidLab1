@@ -1,0 +1,31 @@
+﻿@page
+@model Lab1PhArOh.Pages.UpdateModel
+@{
+}
+
+<form method="post">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Student Number</label>
+            <input type="text" class="form-control" placeholder="Student Number" name="StudentNumber" value="@Model.Student.StudentNumber" readonly />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label>Full Name</label>
+            <input type="text" class="form-control" placeholder="Full Name" name="FullName" value="@Model.Student.FullName " />
+        </div>
+        <div class="form-group col-md-6">
+            <label>Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="Email" value="@Model.Student.Email" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label>Image</label>
+            <input type="text" class="form-control" placeholder="Image" name="Image" value="@Model.Student.Image" />
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 mt-4">Create</button>
+</form>
