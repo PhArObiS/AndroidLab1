@@ -14,7 +14,13 @@ namespace Lab1Neil.Pages
 
         public void OnGet(string id)
         {
-            Student = dataSource.myList.FirstOrDefault(x => x.StudentNumber == id);
+            Student = dataSource.myList.FirstOrDefault(item => item.StudentNumber == id);
+        }
+
+        public IActionResult OnPost(string StudentNumber)
+        {
+            dataSource.myList.RemoveAll(item => item.StudentNumber == StudentNumber);
+            return RedirectToPage("Index");
         }
     }
 }

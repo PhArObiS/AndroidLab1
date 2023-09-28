@@ -2,3 +2,18 @@
 @model Lab1Neil.Pages.DeleteModel
 @{
 }
+
+<form method="post">
+    <input value="@Model.Student.StudentNumber" name="StudentNumber" hidden/>
+    <div class="flex-column">
+        <img class="card-img" src="@Model.Student.Image">
+        <h2>@Model.Student.StudentNumber</h2>
+        <h2>@Model.Student.Email</h2>
+        <h2>@Model.Student.FullName</h2>
+    </div>
+
+    <button type="submit" class="btn btn-danger w-25 wt-4">Yes</button>
+    <a asp-page="/Index" class="btn btn-primary w-25 wt-4">No</a>
+
+
+</form>
