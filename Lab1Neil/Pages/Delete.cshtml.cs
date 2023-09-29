@@ -12,9 +12,15 @@ namespace Lab1Neil.Pages
 
         public Student Student { get; set; }
 
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
+            if (dataSource.StudentLogged == null)
+            {
+                return RedirectToPage("Login", new { Error = "PLEASE LOGIN!!!" });
+            }
+
             Student = dataSource.myList.FirstOrDefault(item => item.StudentNumber == id);
+            return Page();
         }
 
         public IActionResult OnPost(string StudentNumber)

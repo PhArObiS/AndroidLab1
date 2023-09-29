@@ -10,8 +10,14 @@ namespace Lab1Neil.Pages
 
         public StudentData dataSource = StudentData.GetInstance();
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (dataSource.StudentLogged == null)
+            {
+                return RedirectToPage("Login", new {Error = "PLEASE LOGIN!!!"});
+            }
+            
+            return Page();
         }
 
         public IActionResult OnPost(string StudentNumber, string Email, string Password, string Image, string FullName )

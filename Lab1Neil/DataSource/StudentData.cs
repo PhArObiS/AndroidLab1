@@ -9,6 +9,7 @@ namespace Lab1Neil.DataSource
     {
         static StudentData? instance;
         public List<Student> myList = new List<Student>();
+        public Student StudentLogged { get; set; }
 
         protected StudentData()
         {

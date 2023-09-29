@@ -8,12 +8,18 @@ namespace Lab1PhArOh.Pages
     public class UpdateModel : PageModel
     {
         public StudentData dataSource = StudentData.GetInstance();
+
         public Student Student { get; set; }
 
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
-            Student = dataSource.myList.FirstOrDefault(item => item.StudentNumber == id);
+            if (dataSource.StudentLogged == null)
+            {
+                return RedirectToPage("Login", new { Error = "PLEASE LOGIN!!!" });
+            }
 
+            Student = dataSource.myList.FirstOrDefault(item => item.StudentNumber == id);
+            return Page();
         }
 
         public IActionResult OnPost(string StudentNumber, string Email, string Image, string FullName)
