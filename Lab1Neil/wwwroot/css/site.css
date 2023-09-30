@@ -37,3 +37,10 @@ body {
     max-width: 18rem;
     max-height: 10rem;
 }
+
+.nav-img {
+    width: 38px;
+    height: 35px;
+    border-radius: 50px;
+    margin-right: 1rem;
+}

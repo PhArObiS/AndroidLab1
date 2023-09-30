@@ -27,6 +27,17 @@
                         </li>
                     </ul>
                 </div>
+                @if (ViewData["Image"] != null)
+                {
+                    <img class="nav-img" src="@ViewData["Image"]" />
+                    <form asp-page-handler="Logout" method="post">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                }
+                else
+                {
+                    <img class="nav-img" src="https://as1.ftcdn.net/v2/jpg/03/53/11/00/1000_F_353110097_nbpmfn9iHlxef4EDIhXB1tdTD0lcWhG9.jpg" />
+                }
             </div>
         </nav>
     </header>

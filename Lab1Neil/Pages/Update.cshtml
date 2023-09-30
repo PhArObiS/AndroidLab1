@@ -1,6 +1,10 @@
 ﻿@page
 @model Lab1PhArOh.Pages.UpdateModel
 @{
+    if (Model.dataSource.StudentLogged != null)
+    {
+        ViewData["Image"] = Model.dataSource.StudentLogged.Image;
+    }
 }
 
 <form method="post">

@@ -1,6 +1,7 @@
 ﻿@page
 @model Lab1PhArOh.Pages.LoginModel
 @{
+
     if(Model.ErrorMessage != null)
     {
         <div class="alert alert-danger">
@@ -8,7 +9,6 @@
         </div>
     }
  }
-    
 
 <form method="post">
     <div class="row">

@@ -18,5 +18,11 @@ namespace Lab1Neil.Pages
 
 
         }
+        
+        public IActionResult OnPostLogout()
+        {
+            dataSource.StudentLogged = null;
+            return RedirectToPage("Index");
+        }
     }
 }

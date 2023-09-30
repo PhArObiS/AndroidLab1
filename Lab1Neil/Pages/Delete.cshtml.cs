@@ -28,5 +28,11 @@ namespace Lab1Neil.Pages
             dataSource.myList.RemoveAll(item => item.StudentNumber == StudentNumber);
             return RedirectToPage("Index");
         }
+
+        public IActionResult OnPostLogout()
+        {
+            dataSource.StudentLogged = null;
+            return RedirectToPage("Index");
+        }
     }
 }

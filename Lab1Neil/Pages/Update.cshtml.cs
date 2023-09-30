@@ -30,7 +30,14 @@ namespace Lab1PhArOh.Pages
             dataSource.myList[index].FullName = FullName;
 
             return RedirectToPage("Index");
+        }
 
+        public IActionResult OnPostLogout()
+        {
+            dataSource.StudentLogged = null;
+            return RedirectToPage("Index");
         }
     }
+
 }
+

@@ -11,12 +11,18 @@ namespace Lab1PhArOh.Pages
         public Student Student { get; set; }
         public string ErrorMessage { get; set; }
 
-        public void OnGet(string Error)
+        public IActionResult OnGet(string Error)
         {
             if(Error != null)
             {
                 ErrorMessage = Error;
             }
+            if (dataSource.StudentLogged != null)
+            {
+                RedirectToPage("Index");
+            }
+
+            return Page();
         }
 
         public IActionResult OnPost(string StudentNumber, string Password)

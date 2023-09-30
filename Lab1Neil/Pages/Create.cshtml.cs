@@ -25,5 +25,12 @@ namespace Lab1Neil.Pages
             dataSource.myList.Add(new Student(StudentNumber, FullName, Email, Password, Image));
             return RedirectToPage("Index");
         }
+
+        public IActionResult OnPostLogout()
+        {
+            dataSource.StudentLogged = null;
+            return RedirectToPage("Index");
+        }
     }
+
 }
